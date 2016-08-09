@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>移动模板</title>
+<meta name="keywords" content="关键字,关键字,关键字" />
+<meta name="description" content="描述。……" />
+<meta name="Author" content="songyingchun_gz design_gz">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<script type="text/javascript">
+if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+    var version = parseFloat(RegExp.$1);
+    if(version>2.3){
+        var phoneScale = parseInt(window.screen.width)/640;
+        document.write('<meta name="viewport" content="width=640, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+    }else{
+        document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+    }
+}else{
+    document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi,minimal-ui">');
+}
+</script>
+<link rel="stylesheet" href="css/common.css" type="text/css">
+<link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+<body class="body">
+<!-- 这一条是广告代码所必须的js，可根据需要来添加 如果页面中没有广告需求 可以连同最底部的submitIvy一起不加，反之则需要 -->
+<script>if(!window._addIvyID) document.write("<scr"+"ipt src='http://www.pconline.com.cn/_hux_/online/default/index.js'><\/scr"+"ipt>");</script>
+
+<!-- 栏目计数器/文章计数器 -->
+<span class="spanclass">
+<script>document.body.insertBefore(document.createElement("script"),document.body.firstChild).src="http://count.pclady.com.cn/count.php?channel=1598&screen="+screen.width+"*"+screen.height+"&refer="+encodeURIComponent(document.referrer)+"&anticache="+new Date().getTime()+"&url="+encodeURIComponent(location.href) + '&from=cms';</script>
+</span>
+
+<!-- 头部 -->
+<div class="g-doc">
+    <!-- 图片预加载页面开始 -->
+    <div id="Jpreload" class="preload">
+        <img src="http://img0.pclady.com.cn/pclady/mdxy/1605/640.jpg" alt="" title="" style="opacity:0;">
+        <div class="loading-animation">
+            <div class="loading-percent"></div>
+            <div class="loading-icon"></div>
+            <div class="loading-data">0%</div>
+        </div>
+    </div>
+    <!-- 图片预加载页面结束 -->
+
+    <!-- header -->
+    <div class="header">
+        
+    </div>
+    <div class="wraper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <!-- 第一屏 -->
+                <div class="swiper-slide m-item m-item1">
+                    
+                    <img data-src="images/common/nextPage.png" class="nextPage swiper-lazy" alt="">
+                </div>
+                <!-- /第一屏 -->
+            
+                <!-- 第二屏 -->
+                <div class="swiper-slide m-item m-item2">
+                    <img data-src="images/p1/01.png" class="img1 swiper-lazy" alt="">
+                    <img data-src="images/common/nextPage.png" class="nextPage swiper-lazy" alt="">
+                </div>
+                <!-- /第二屏 -->
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- 右上角音乐开始 -->
+        <div class="play_music">
+            <div class="play_yinfu"></div>
+            <div class="play_audio">
+                <audio loop="true"></audio>
+            </div>
+        </div>
+        <!-- 右上角音乐结束 -->
+
+    </div>
+</div>
+<!-- http://www.swiper.com.cn/api/callbacks/2014/1217/92.html -->
+<script src="js/zepto.js"></script>
+<script src="js/mobile3.js"></script>
+<script src="js/swiper.js"></script>
+<script src="http://js.3conline.com/wap/common/wxApi.min.js" charset="utf-8" type="text/javascript" async="async"></script>
+<script>
+(function (window) {
+
+    var config = {
+        src: "music.mp3",
+        weixin: function () {
+            wxApi.init(function () {
+                var shareData = {
+                    title: '分享标题',
+                    desc:'分享描述',
+                    link: '分享链接',
+                    imgUrl: '分享图标'
+                };
+                wx.onMenuShareAppMessage(shareData);// 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareTimeline(shareData);// 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareQQ(shareData);// 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareWeibo(shareData);// 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
+            });
+        },
+        useMasker: false
+    }
+
+    config.page = {
+        0: {
+            init: function () {
+                // var target = this.target,
+                //     img1 = target.querySelector(".img1");
+
+                // this.bind(img1, "onclick", function () {
+                //     console.log("click");
+                // });
+
+                // this.bind(img1, "click", function () {
+                //     console.log("click2");
+                // });
+
+                // this.addClass(img1, "cur");
+
+                // this.setInterval(function () {
+                //     console.log("setInterval");
+                // }, 500);
+            }
+        }
+    }
+
+    var wap = new Wap(config);
+
+})(this);
+
+
+</script>
+<!-- /页面脚本区 -->
+<script>_submitIvyID();</script>
+</body>
+</html>
